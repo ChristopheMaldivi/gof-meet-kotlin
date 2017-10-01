@@ -1,3 +1,1 @@
-interface Console {
-    fun display(message: String)
-}
+typealias Console = (String) -> Unit

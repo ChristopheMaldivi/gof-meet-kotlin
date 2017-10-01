@@ -11,6 +11,6 @@ class Observable {
     }
 
     fun event() {
-        listeners.forEach { listener -> listener.invoke() }
+        listeners.forEach { listener -> listener() }
     }
 }

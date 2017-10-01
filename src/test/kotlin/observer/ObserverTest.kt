@@ -7,11 +7,13 @@ import observable.Observable
 class ObserverTest {
 
     @Test
-    fun observer_gets_notified_when_event_occurs() {
+    fun `listener lambda is called when event occurs`() {
         // given
         var called = false
         val observable = Observable()
-        observable.register({ called = true })
+        val listener = { called = true }
+        observable.register(listener)
+
         // when
         observable.event()
 
