@@ -60,7 +60,7 @@ class DecoratorTest {
 
     // when
     var salaryPerMonthLessTaxes = annualSalary
-    taxes.forEach({f -> salaryPerMonthLessTaxes = f(salaryPerMonthLessTaxes)})
+    taxes.forEach({ it(salaryPerMonthLessTaxes) })
 
     // then
     assertEquals(salaryPerMonthLessTaxes, 1700.0, 0.001)
