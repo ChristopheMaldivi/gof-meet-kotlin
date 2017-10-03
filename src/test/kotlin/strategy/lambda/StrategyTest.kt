@@ -18,10 +18,12 @@ class StrategyTest {
   fun `an error filter returns true if text starts with ERROR`() {
     // given
     val errorMessage = "ERROR - something bad happened"
-    val errorFilter = { text: String -> text.startsWith("ERROR") }
+
+    // => FILL LAMBDA FUNCTION BELOW!
+    val errorFilter = null
 
     // when
-    val filtered = errorFilter(errorMessage)
+    val filtered = false // => UNCOMMENT! errorFilter(errorMessage)
 
     // then
     assertTrue { filtered }
@@ -31,10 +33,12 @@ class StrategyTest {
   fun `an error formatter returns text in UPPER CASE`() {
     // given
     val errorMessage = "ERROR - something bad happened"
-    val errorFormatter = { text: String -> text.toUpperCase() }
+
+    // => FILL LAMBDA FUNCTION BELOW!
+    val errorFormatter = null
 
     // when
-    val formattedText = errorFormatter(errorMessage)
+    val formattedText = "" // errorFormatter(errorMessage)
 
     // then
     assertEquals(formattedText, "ERROR - SOMETHING BAD HAPPENED")
@@ -44,11 +48,13 @@ class StrategyTest {
   fun `a text prefixed with ERROR is published with upper case format`() {
     // given
     val errorMessage = "ERROR - something bad happened"
-    val errorFilter = { text: String -> text.startsWith("ERROR") }
-    val errorFormatter = { text: String -> text.toUpperCase() }
+
+    // => FILL LAMBDA FUNCTIONS BELOW!
+    val errorFilter = null
+    val errorFormatter = null
 
     // when
-    publishText(console, errorMessage, errorFilter, errorFormatter)
+    // => UNCOMMENT! publishText(console, errorMessage, errorFilter, errorFormatter)
 
     // then
     assertEquals("ERROR - SOMETHING BAD HAPPENED", consoleMessage)
@@ -58,11 +64,13 @@ class StrategyTest {
   fun `a text with length lesser than 21 chars is published in lower case`() {
     // given
     val shortMessage = "DEBUG - I'am here"
-    val shortTextFilter = { text: String -> text.length < 21 }
-    val shortTextFormatter = { text: String -> text.toLowerCase() }
+
+    // => FILL LAMBDA FUNCTIONS BELOW!
+    val shortTextFilter = null
+    val shortTextFormatter = null
 
     // when
-    publishText(console, shortMessage, shortTextFilter, shortTextFormatter)
+    // => UNCOMMENT! publishText(console, shortMessage, shortTextFilter, shortTextFormatter)
 
     // then
     assertEquals("debug - i'am here", consoleMessage)

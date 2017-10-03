@@ -15,10 +15,12 @@ class DecoratorTest {
   fun `compute salary per month`() {
     // given
     val annualSalary = 30000.0
-    val computeSalaryPerMonth = { salary: Double -> salary / 12 }
+
+    // => FILL LAMBDA FUNCTION BELOW!
+    val computeSalaryPerMonth = null
 
     // when
-    val salaryPerMonth = computeSalaryPerMonth(annualSalary)
+    val salaryPerMonth = 0.0 // => UNCOMMENT! computeSalaryPerMonth(annualSalary)
 
     // then
     assertEquals(salaryPerMonth, 2500.0, 0.001)
@@ -29,18 +31,20 @@ class DecoratorTest {
     // given
     val annualSalary = 30000.0
 
-    val computeSalaryPerMonth = { salary: Double -> salary / 12 }
-    val lessGeneralTax = { salary: Double -> salary * 0.8 }
-    val lessRegionalTax = { salary: Double -> salary * 0.95 }
-    val lessHealthInsuranceTax = { salary: Double -> salary - 200 }
+    // => FILL LAMBDA FUNCTIONS BELOW!
+    val computeSalaryPerMonth = null
+    val lessGeneralTax = null
+    val lessRegionalTax = null
+    val lessHealthInsuranceTax = null
 
-    val taxes = computeSalaryPerMonth
+    // => UNCOMMENT!
+    /*val taxes = computeSalaryPerMonth
       .andThen(lessGeneralTax)
       .andThen(lessRegionalTax)
-      .andThen(lessHealthInsuranceTax)
+      .andThen(lessHealthInsuranceTax)*/
 
     // when
-    val salaryPerMonthLessTaxes = taxes(annualSalary)
+    val salaryPerMonthLessTaxes = 0.0 // => UNCOMMENT! taxes(annualSalary)
 
     // then
     assertEquals(salaryPerMonthLessTaxes, 1700.0, 0.001)
@@ -51,16 +55,17 @@ class DecoratorTest {
     // given
     val annualSalary = 30000.0
 
-    val computeSalaryPerMonth = { salary: Double -> salary / 12 }
-    val lessGeneralTax = { salary: Double -> salary * 0.8 }
-    val lessRegionalTax = { salary: Double -> salary * 0.95 }
-    val lessHealthInsuranceTax = { salary: Double -> salary - 200 }
+    // => FILL LAMBDA FUNCTIONS BELOW!
+    val computeSalaryPerMonth = null
+    val lessGeneralTax = null
+    val lessRegionalTax = null
+    val lessHealthInsuranceTax = null
 
     val taxes = listOf(computeSalaryPerMonth, lessGeneralTax, lessRegionalTax, lessHealthInsuranceTax)
 
     // when
     var salaryPerMonthLessTaxes = annualSalary
-    taxes.forEach({ it(salaryPerMonthLessTaxes) })
+    taxes.forEach({ /* ? */ })
 
     // then
     assertEquals(salaryPerMonthLessTaxes, 1700.0, 0.001)

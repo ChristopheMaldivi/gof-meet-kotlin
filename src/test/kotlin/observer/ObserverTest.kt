@@ -16,8 +16,10 @@ class ObserverTest {
     // given
     var called = false
     val observable = Observable()
-    val listener = { called = true }
-    observable.register(listener)
+
+    // => FILL LAMBDA FUNCTION BELOW!
+    val listener = null
+    // => UNCOMMENT! observable.register(listener)
 
     // when
     observable.event()

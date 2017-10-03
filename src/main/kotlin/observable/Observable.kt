@@ -1,18 +1,7 @@
 package observable
 
-typealias Listener = () -> Unit
-
 class Observable {
-
-  private val listeners = mutableListOf<Listener>()
-
-  fun register(listener: () -> Unit) {
-    listeners.add(listener)
-  }
-
   fun event() {
-    listeners.forEach { listener -> listener() }
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 }
-
-fun main(args: Array<String>) = println("hi kotlin")
