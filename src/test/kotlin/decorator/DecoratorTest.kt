@@ -3,12 +3,6 @@ package decorator
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-typealias TaxSubstractor = (Double) -> Double
-
-fun (TaxSubstractor).andThen(f: TaxSubstractor): TaxSubstractor {
-  return { t -> f(this(t))}
-}
-
 class DecoratorTest {
 
   @Test
@@ -38,6 +32,9 @@ class DecoratorTest {
     val lessHealthInsuranceTax = null
 
     // => UNCOMMENT!
+    // NB:
+    //  - you need to implement a typealias for these lambdas
+    //  - and then to extend this typealias with the 'andThen' function...
     /*val taxes = computeSalaryPerMonth
       .andThen(lessGeneralTax)
       .andThen(lessRegionalTax)
